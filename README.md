@@ -1,6 +1,11 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Here's the page: https://unruffled-yalow-063354.netlify.app
 
+Aditional dependencies
+You'll need to install [json-server] in order to be able to test the app
 
+npm install json-server
+
+Use [json-server -p PORT [PATH to json file './db.json']
 ## Aditional dependencies 
 
 You'll need to install [json-server] in order to be able to test the app \n
