@@ -3,7 +3,10 @@ import axios from 'axios'
 import Banner from './banner'
 import ArtistsList from './artistsList'
 
-const URL_ARTISTS = 'https://viajesapi.herokuapp.com/api/logs/artists'
+const URL_ARTISTS =
+  process.env.NODE_ENV === 'development'
+    ? 'http://localhost:3004'
+    : process.env.REACT_APP_URL_ARTISTS
 
 const Home = () => {
   const [artists, setArtists] = useState([])
@@ -18,7 +21,7 @@ const Home = () => {
         console.log(err)
       })
   }, [])
-//   console.log(artists)
+  //   console.log(artists)
 
   return (
     <>
