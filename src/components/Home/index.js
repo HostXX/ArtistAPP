@@ -1,35 +1,31 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import Banner from './banner';
-import ArtistsList from './artistsList';
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
+import Banner from './banner'
+import ArtistsList from './artistsList'
 
-const URL_ARTISTS = 'http://localhost:3005/artists'
+const URL_ARTISTS = process.env.REACT_APP_URL_ARTISTS
 
-class Home extends Component {
+const Home = () => {
+  const [artists, setArtists] = useState([])
 
-    state = {
-        artists:[]
-    }
+  useEffect(() => {
+    axios
+      .get(URL_ARTISTS)
+      .then(response => {
+        setArtists(response.data)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }, [])
+//   console.log(artists)
 
-    componentDidMount(){
-        axios.get(URL_ARTISTS)
-        .then( response => {
-            this.setState({artists: response.data })
-        }).catch((err)=>{console.log(err)})
-    } 
-
-
-    render(){
-        console.log(this.state)
-        return(
-            <>
-                <Banner/>
-                <ArtistsList allArtists={this.state.artists}/>
-            </>
-        )
-    }
-
-
+  return (
+    <>
+      <Banner />
+      <ArtistsList allArtists={artists} />
+    </>
+  )
 }
 
-export default Home;
+export default Home
