@@ -1,5 +1,13 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+## Aditional dependencies 
+
+You'll need to install <json-server> in order to be able to test the app
+npm install json-server
+
+Use [json-server -p <PORT> <path to the json file './db.json'>]
+
 ## Available Scripts
 
 In the project directory, you can run:
