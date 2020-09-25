@@ -3,7 +3,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Aditional dependencies 
 
-You'll need to install [json-server] in order to be able to test the app
+You'll need to install [json-server] in order to be able to test the app \n
 npm install json-server
 
 Use [json-server -p <PORT> <path to the json file './db.json'>

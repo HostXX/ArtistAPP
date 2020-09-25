@@ -3,7 +3,7 @@ import axios from 'axios'
 import Banner from './banner'
 import ArtistsList from './artistsList'
 
-const URL_ARTISTS = process.env.REACT_APP_URL_ARTISTS
+const URL_ARTISTS = 'https://viajesapi.herokuapp.com/api/logs/artists'
 
 const Home = () => {
   const [artists, setArtists] = useState([])
@@ -12,7 +12,7 @@ const Home = () => {
     axios
       .get(URL_ARTISTS)
       .then(response => {
-        setArtists(response.data)
+        setArtists(response.data.artists)
       })
       .catch(err => {
         console.log(err)
